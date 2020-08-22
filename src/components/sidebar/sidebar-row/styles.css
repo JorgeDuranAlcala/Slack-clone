@@ -1,4 +1,15 @@
 .sidebarRow {
     display: flex;
     align-items: center;
+    background: var(--slack_bg);
+    padding-left: 10px;
 }
+
+.sidebarRow > h3 {
+   margin-left: 8px;
+   font-size: 15px;
+}
+
+.sidebarRow > .MuiSvgIcon-root {
+    font-size: 18px;
+ }

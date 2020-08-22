@@ -11,7 +11,9 @@ const Header = (props: Props) => {
     return (
         <div className="header">
             <div className="header__left">
-                <Menu/>
+                <button type="button" className="header__left__btn">
+                    <Menu className="header__left__icon"/>
+                </button>
             </div>
             <div className="header__input">
                 <input type="text"/>

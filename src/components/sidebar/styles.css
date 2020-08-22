@@ -1,16 +1,51 @@
 .sidebar {
     flex: 0.2;
-    max-width: 260px;
+    min-width: 260px;
+    background-color: var(--slack_bg) !important;
+    color: #fff;
+}
+
+.sidebar > hr {
+    border: 1px solid hsl(266, 98%, 37%)
 }
 
 .sidebar__header {
     background-color: var(--slack_bg);
     display: flex;
     align-items: center;
+    padding: 13px;
+    border: 2px solid hsl(266, 98%, 37%)
+}
+
+.sidebar__info {
+    flex: 1;
+}
+
+.sidebar__info > h3 {
+    display: flex;
+    font-size: 13px;
+    align-items: center;
+    font-weight: 400;
+}
+
+.sidebar__info > h2 {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
 .sidebar__header__icon {
-    color: #27f81a;
+    background-color: #fff;
+    padding: 6px 8px;
+    font-size: 18px;
+    border-radius: 50%;
+    color: hsl(266, 98%, 37%)
 }
+
+.sidebar__info__icon {
+    color: #27f81a;
+    font-size: 13px;
+}
+
 
 

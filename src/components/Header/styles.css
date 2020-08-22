@@ -24,3 +24,20 @@
     padding: 5px;
     color: #fff;
 }
+
+.header__left__icon {
+    cursor: pointer;
+}
+
+.header__left__btn {
+    background: inherit;
+    border: none;
+    outline: none;
+    padding: 6px 8px;
+    transition: .3s all ease;
+    border-radius: 50%;
+}
+
+.header__left__btn:active {
+    background-color: hsl(266, 98%, 37%)
+}
