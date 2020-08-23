@@ -12,6 +12,8 @@ body {
   height: 100%;
 }
 
-.App__content {
+.App__body {
   display: flex;
+  height: 100vh;
+  overflow: hidden;
 }

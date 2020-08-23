@@ -2,16 +2,15 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px;
     background-color: var(--slack_bg);
     color: #fff;
+    padding: 2px 4px;
     border-bottom: 2px solid #5800cc;
 }
 
 .header__input {
     display: flex;
     width: 40%;
-    padding: 4px;
     background: hsl(266, 98%, 37%);
     box-shadow: 0 2px 3px hsl(266, 98%, 37%);
 }

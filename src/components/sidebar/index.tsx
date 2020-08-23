@@ -18,12 +18,23 @@ interface Props {
 
 const Sidebar = (props: Props) => {
 
+    interface rooms {
+        id: string;
+        data: { name: string }
+    }
+
+    const [channels, setChannels] = useState<rooms[]>([])
+
     useEffect(() => {
-        
+        db.collection('rooms').onSnapshot(snapshot => {
+                setChannels(
+                    snapshot.docs.map(doc => ({
+                        id: doc.id,
+                        data: doc.data()
+                    })) as rooms[]
+                )
+        })
     }, [])
-
-
-
 
 
     return (
@@ -47,8 +58,9 @@ const Sidebar = (props: Props) => {
             <SidebarRow title="Channels" Icon={ExpandMoreIcon} />
             <hr />
             <SidebarRow title="Add Channels" Icon={AddIcon} />
-            <SidebarRow title="My own channel" />
-            <SidebarRow title="My own channel" />
+            {
+                channels.map(room => <SidebarRow key={room.id} title={room.data.name} />)
+            }
 
         </div>
     )

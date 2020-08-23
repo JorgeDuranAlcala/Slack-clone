@@ -17,7 +17,7 @@ const SidebarRow = ({ Icon, title }: Props) => {
                 )
                 : (
                     <>
-                        <h3># {title}</h3>
+                        <h3 className="sidebarRow__channel"># {title}</h3>
                     </>
                 )
             }

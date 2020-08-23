@@ -14,7 +14,7 @@
     display: flex;
     align-items: center;
     padding: 13px;
-    border: 2px solid hsl(266, 98%, 37%)
+    border-bottom: 2px solid hsl(266, 98%, 37%)
 }
 
 .sidebar__info {
