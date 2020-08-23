@@ -19,7 +19,7 @@ const Chat = (props: Props) => {
         .onSnapshot(snapshot => setRoomDetails(snapshot.data()) )
     }, [roomId])
 
-    console.log(roomDetails&&roomDetails)
+    console.log(roomDetails)
 
     return (
         <div className="chat">
@@ -27,7 +27,7 @@ const Chat = (props: Props) => {
             <div className="chat__header">
                 <div className="chat__header__left">
                     <h4>
-                        <strong> #currentChannel </strong>  
+                        <strong> #{roomDetails.name} </strong>  
                         <StarBorderOutlined/>
                     </h4>
                 </div>
@@ -39,7 +39,7 @@ const Chat = (props: Props) => {
                 </div>
             </div>
             {/* messages */}
-
+            
         </div>
     )
 }

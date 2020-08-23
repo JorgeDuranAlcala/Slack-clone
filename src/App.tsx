@@ -1,15 +1,17 @@
 import React from 'react';
 import {Header, Sidebar, Chat} from "./components";
 import './App.css';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-
+import { Router, Switch, Route } from 'react-router-dom'
+import { createBrowserHistory } from "history";
 function App() {
+
+  
   return (
     <div className="App">
       <Header/>
       <div className="App__body">
-        <Sidebar/>
-        <Router>
+        <Router history={createBrowserHistory()} >
+          <Sidebar/>
           <Switch>
             <Route path="/room/:roomId">
               <Chat/>

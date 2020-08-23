@@ -57,9 +57,9 @@ const Sidebar = (props: Props) => {
             <hr />
             <SidebarRow title="Channels" Icon={ExpandMoreIcon} />
             <hr />
-            <SidebarRow title="Add Channels" Icon={AddIcon} />
+            <SidebarRow title="Add Channels" addOption={true} Icon={AddIcon} />
             {
-                channels.map(room => <SidebarRow key={room.id} title={room.data.name} />)
+                channels.map(room => <SidebarRow key={room.id} id={room.id} title={room.data.name} />)
             }
 
         </div>
