@@ -1,0 +1,24 @@
+.sendMessage {
+    grid-area: input;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr;
+}
+
+.sendMessage form {
+    width: 100%;
+    padding: 10px;
+}
+
+.sendMessage form .sendMessage__input {
+    width: 100%;
+    height: 70%;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 0 8px;
+    font-family: "Poppins";
+}
+
+.sendMessage form button {
+    display: none;
+}

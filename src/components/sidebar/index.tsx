@@ -8,9 +8,12 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import CreateIcon from '@material-ui/icons/Create';
 import AddIcon from '@material-ui/icons/Add';
 import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
-import './styles.css'
 import db from '../../firebase'
+import { useStateValue  } from '../../context/stateContext'
+import { IRooms } from './types'
+import { useDbChannels } from "../../hooks/useDbChannels";
 
+import './styles.css'
 
 interface Props {
     
@@ -18,23 +21,17 @@ interface Props {
 
 const Sidebar = (props: Props) => {
 
-    interface rooms {
-        id: string;
-        data: { name: string }
-    }
+   const channels = useDbChannels()
+   const [{ user }, dispatch] = useStateValue()
 
-    const [channels, setChannels] = useState<rooms[]>([])
-
-    useEffect(() => {
-        db.collection('rooms').onSnapshot(snapshot => {
-                setChannels(
-                    snapshot.docs.map(doc => ({
-                        id: doc.id,
-                        data: doc.data()
-                    })) as rooms[]
-                )
+   const addNewChannel = (e:any) => {
+       const channelName = prompt('Type a channel name')
+       db
+        .collection('rooms')
+        .add({
+            name: channelName
         })
-    }, [])
+   }
 
 
     return (
@@ -44,7 +41,7 @@ const Sidebar = (props: Props) => {
                     <h2>Clever Programer</h2>
                     <h3>
                         <FiberManualRecordIcon className="sidebar__info__icon"/>
-                        Jorge Duran
+                        { user.displayName }
                     </h3>
                 </div>
                 <CreateIcon className="sidebar__header__icon"/>
@@ -57,7 +54,7 @@ const Sidebar = (props: Props) => {
             <hr />
             <SidebarRow title="Channels" Icon={ExpandMoreIcon} />
             <hr />
-            <SidebarRow title="Add Channels" addOption={true} Icon={AddIcon} />
+            <SidebarRow onClick={addNewChannel} title="Add Channels" addOption={true} Icon={AddIcon} />
             {
                 channels.map(room => <SidebarRow key={room.id} id={room.id} title={room.data.name} />)
             }

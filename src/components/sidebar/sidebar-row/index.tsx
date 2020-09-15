@@ -6,13 +6,13 @@ interface Props {
     Icon?: any;
     title: string;
     addOption?: boolean;
-    id?: string
+    id?: string;
+    onClick?: (e:any) => void;
 }
 
-const SidebarRow = ({ Icon, title, addOption, id }: Props) => {
+const SidebarRow = ({ Icon, title, addOption, id, onClick }: Props) => {
 
     const history = useHistory()
-    console.log(history)
 
     const addChannel = () => {
         
@@ -33,7 +33,7 @@ const SidebarRow = ({ Icon, title, addOption, id }: Props) => {
             { Icon ? (
                  <>
                     <Icon/>
-                    <h3>{title}</h3>
+                    <h3 onClick={onClick&&onClick} >{title}</h3>
                  </>
                 )
                 : (

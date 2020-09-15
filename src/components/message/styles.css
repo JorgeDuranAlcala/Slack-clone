@@ -1,0 +1,34 @@
+.message {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    padding: 8px 20px;
+}
+
+
+.message > .message__userImage {
+    height: 50px;
+    width: 50px;
+    border-radius: 5px;
+    object-fit: contain;
+}
+
+.message__messageInfo {
+    margin-left: 8px;
+}
+
+.message__messageInfo > h4 {
+    margin: 0;
+    font-weight: 800;
+}
+
+.message__messageInfo h4 > span {
+    font-size: small;
+    color: lightgray;
+    margin-left: 5px;
+}
+
+.message__messageInfo > p {
+    font-weight: 300;
+    color:rgba(0,0,0, 0.6)
+}

@@ -4,15 +4,18 @@
     justify-content: space-between;
     background-color: var(--slack_bg);
     color: #fff;
-    padding: 2px 4px;
-    border-bottom: 2px solid #5800cc;
+    padding: 5px 8px;
+    border-bottom: 2px solid rgb(73, 37, 74);
+    position: sticky;
+    z-index: 99;
+    top: 0;
 }
 
 .header__input {
     display: flex;
     width: 40%;
-    background: hsl(266, 98%, 37%);
-    box-shadow: 0 2px 3px hsl(266, 98%, 37%);
+    background: rgb(73, 37, 74);
+    box-shadow: 0 2px 3px rgb(73, 37, 74);
 }
 
 .header__input > input {
@@ -24,19 +27,14 @@
     color: #fff;
 }
 
+.header__left {
+    display: flex;
+    align-items: center;
+}
+
 .header__left__icon {
     cursor: pointer;
+    color: #fff
+    
 }
 
-.header__left__btn {
-    background: inherit;
-    border: none;
-    outline: none;
-    padding: 6px 8px;
-    transition: .3s all ease;
-    border-radius: 50%;
-}
-
-.header__left__btn:active {
-    background-color: hsl(266, 98%, 37%)
-}

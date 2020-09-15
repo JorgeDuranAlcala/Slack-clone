@@ -3,7 +3,8 @@
     align-items: center;
     background: var(--slack_bg);
     padding-left: 18px;
-    cursor: pointer
+    cursor: pointer;
+    padding: 10px;
 }
 
 .sidebarRow > h3 {
